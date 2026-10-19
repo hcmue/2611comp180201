@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #hoca{width: 90%; border: 1px solid red; height: 70%; position: fixed; bottom: 0; left: 20px;border-top: 0; background-color: beige;}
+        @keyframes caboi {
+            0%{left: 0;}
+            25%{translate: 200px 0px;}
+            48%{translate: 400px 20px;}
+            52%{translate: 400px 20px; rotate: -180deg;}
+            75%{translate: 200px 0px;}
+            100%{left: 0;}
+        }
+        #camap{width: 120px; animation-name: caboi;animation-duration: 30s; animation-iteration-count: infinite;}
+    </style>
+</head>
+<body>
+    <div id="hoca">
+        <img id="camap" src="shark.png" />
+    </div>
+</body>
+</html>
