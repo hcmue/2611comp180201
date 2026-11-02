@@ -1,0 +1,6 @@
+/* Layout.css */
+#myheader{height: 120px; background-color: azure; position: relative;}
+.hh-img{position: absolute; right: 0; top: 0; height: 100%;}
+.hh-content{min-height: 500px; border: 1px solid blue;}
+.card-header{font-weight: bolder; color: red;}
+/* .hh-product{display: inline-block;} */
