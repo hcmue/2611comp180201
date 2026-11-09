@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // alert("Hello các bạn");
+        // let hoTen = prompt("Bạn tên gì");
+        // let namSinh = parseInt(prompt("Năm sinh"));
+        // let laNam = confirm("Bạn là NAM à?");
+        // let chuoi = `Bạn ${hoTen} sinh ${namSinh}, là Nam: ${laNam}`;
+        // alert(chuoi);
+        // document.write(chuoi);
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        Swal.fire({
+            title: "The Internet?",
+            text: "That thing is still around?",
+            icon: "question"
+        });
+        Swal.fire({
+            title: "Do you want to save the changes?",
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: "Save",
+            denyButtonText: `Don't save`
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) Swal.fire("Saved!", "", "success");
+            else if (result.isDenied) Swal.fire("Changes are not saved", "", "info");
+        });
+    </script>
+
+</body>
+
+</html>
