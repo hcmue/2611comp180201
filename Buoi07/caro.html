@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btnShow">Hiện</button>
+    <button id="btnHide">Ẩn</button>
+    <button id="btnToggle">Hiện/Ẩn</button>
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("td").css({
+                "width": "20px", "height": "20px", "border": "1px solid red"
+            });
+            var giaTri = "X";
+            $("td").click(function () {
+                if ($(this).html() === "") {
+                    $(this).html(giaTri);
+                    giaTri = giaTri === "X" ? "O" : "X";
+                }
+            });
+            $("#btnHide").click(function () {
+                $("table").hide(2000);
+            });
+            $("#btnShow").click(function () {
+                $("table").show(2000);
+            });
+            $("#btnToggle").click(function () {
+                $("table").toggle(2000);
+            });
+        });
+    </script>
+</body>
+
+</html>
