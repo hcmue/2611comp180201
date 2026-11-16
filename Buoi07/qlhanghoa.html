@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Thêm/Sửa sản phẩm</legend>
+        Mã: <input id="productId" /><br>
+        Tên: <input id="productName" /><br>
+        Giá: <input id="productPrice" type="number" /><br>
+        <button id="XuLySanPham" onclick="themSuaSanPham()">Thêm/Sửa</button>
+    </fieldset>
+    <h2>Danh sách</h2>
+    <table celllspacing="0">
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Price</th>
+            <td></td>
+        </tr>
+        <tbody id="content"></tbody>
+    </table>
+    <script>
+        const layDsSanPham = () => JSON.parse(localStorage.getItem("products")) || [];
+
+        const luuDsSanPham = (data) => {
+            localStorage.setItem("products", JSON.stringify(data));
+        }
+
+        function themSuaSanPham() {
+            let prodId = document.querySelector("#productId").value;
+            let prodName = document.querySelector("#productName").value;
+            let prodPrice = document.getElementById("productPrice").value;
+
+            let data = layDsSanPham();
+            let pro = data.find(p => p.id);
+            if (pro === undefined) {
+                data.push({
+                    id: prodId, name: prodName, price: prodPrice
+                });
+                luuDsSanPham(data);
+            }
+        }
+    </script>
+</body>
+
+</html>
